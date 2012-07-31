@@ -1,0 +1,27 @@
+<table class="table table-condensed table-striped">
+	<thead>
+		<th>Nome</th>
+		<th>Apelido</th>
+		<th>Profissão</th>
+		<th>Opções</th>
+	</thead>
+	<tbody>
+		{{#each view.contacts}}
+			<tr>
+				<td>
+					{{fullName}}
+				</td>
+				<td>
+					{{nickName}}
+				</td>
+				<td>
+					{{profession}}
+				</td>
+				<td>
+					<a href="#" {{bindAttr data-id="id"}} {{action "edit" on="click"}}><img src="img/pencil.png"/></a>
+					<a href="#" {{bindAttr data-id="id"}} {{action "delete" on="click"}}><img src="img/cross.png"/></a>
+				</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>

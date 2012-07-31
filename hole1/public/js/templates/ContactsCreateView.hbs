@@ -1,0 +1,31 @@
+<fieldset>
+	<legend>Contacts</legend>
+	
+	<form method="post" action="/contacts" id="formtest" class="form-horizontal">
+		{{view App.TextView klass="span10" valueBinding="view.contact.fullName" label="Nome Completo"}}
+		{{view App.TextView klass="span5" valueBinding="view.contact.nickName" label="Apelido"}}
+		{{view App.TextView klass="span5" valueBinding="view.contact.profession" label="Profissão"}}
+		{{view App.MaskedTextView width="80" valueBinding="view.contact.birthDate" mask="99/99/9999" label="Data de Nascimento"}}
+		{{view App.GenderView width="150" selectionBinding="view.contact.gender" label="Sexo"}}
+		{{view App.MaritalStatusView width="150" selectionBinding="view.contact.maritalStatus" label="Estado Civil"}}
+		{{view App.MaskedTextView width="100" valueBinding="view.contact.residentialPhone" mask="(99) 9999-9999" label="Telefone Residencial"}}
+		{{view App.MaskedTextView width="100" valueBinding="view.contact.comercialPhone" mask="(99) 9999-9999" label="Telefone Comercial"}}
+		{{view App.MaskedTextView width="100" valueBinding="view.contact.fax" mask="(99) 9999-9999" label="Fax"}}
+		{{view App.MaskedTextView width="100" valueBinding="view.contact.mobilePhone" mask="(99) 9999-9999" label="Celular"}}
+
+
+		<fieldset>
+			<legend>Endereço</legend>
+			{{view App.CEPLoaderView label="CEP" addressBinding="view.address"}}
+			{{view App.TextView klass="span5" valueBinding="view.address.city" label="Cidade"}}
+			{{view App.TextView klass="span5" valueBinding="view.contact.publicParkType" label="Tipo de Logradouro"}}
+			{{view App.TextView klass="span5" valueBinding="view.contact.publicPark" label="Logradouro"}}
+			{{view App.TextView klass="span5" valueBinding="view.contact.number" label="Número"}}
+			{{view App.TextView klass="span5" valueBinding="view.contact.complement" label="Complemento"}}
+			{{view App.TextView klass="span5" valueBinding="view.contact.neighborhood" label="Bairro"}}
+			{{view App.TextView klass="span5" valueBinding="view.contact.landmark" label="Ponto de Referência"}}
+		</fieldset>
+
+		<button class="btn btn-primary" type="button" {{action "submit" on="click"}}>Salvar</button>
+	</form>
+</fieldset>
